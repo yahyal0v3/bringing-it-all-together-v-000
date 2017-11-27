@@ -55,4 +55,8 @@ class Dog
     self.new(hash)
   end
 
+  def update
+    DB[:conn].execute("INSERT INTO dogs (name, breed) VALUES (?, ?) WHERE id = ?", self.name, self.breed, self.id)
+  end 
+
 end
