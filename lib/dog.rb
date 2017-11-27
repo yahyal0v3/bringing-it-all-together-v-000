@@ -56,7 +56,8 @@ class Dog
   end
 
   def update
-    DB[:conn].execute("INSERT INTO dogs (name, breed) VALUES (?, ?) WHERE id = (?)", self.name, self.breed, self.id)
+    binding.pry
+    DB[:conn].execute("INSERT INTO dogs (name, breed) VALUES (?, ?) WHERE id = ?", self.name, self.breed, self.id)
   end
 
 end
